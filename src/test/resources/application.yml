@@ -1,0 +1,28 @@
+# application properties for test
+
+logging:
+  level:
+    ROOT: INFO
+    de.datev.samples.loadtest: DEBUG
+
+swagger:
+  enable: false
+
+management:
+  health:
+    ldap:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        exclude: env
+    enabled-by-default: true
+  endpoint:
+    health:
+      show-details: always
+
+app-config:
+  default-sleep-time-milliseconds: 10
+  default-fib-input: 35
+  default-return-size: 102400

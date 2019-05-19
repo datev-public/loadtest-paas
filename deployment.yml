@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: loadtest1
+spec:
+  replicas: 1 # tells deployment to run 1 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: loadtest1
+    spec:
+      containers:
+        - name: loadtest1
+          image: 'webappcommunity/loadtest-paas:latest'
+          ports:
+            - containerPort: 8080

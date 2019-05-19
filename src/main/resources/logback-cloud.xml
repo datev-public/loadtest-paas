@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+
+    <appender name="SPLUNK" class="com.splunk.logging.HttpEventCollectorLogbackAppender">
+        <url>${LOG_SPLUNK_URL}</url>
+        <source>${LOG_SPLUNK_INDEX}</source>
+        <sourcetype>${LOG_SPLUNK_SOURCE_TYPE}</sourcetype>
+        <token>${LOG_SPLUNK_TOKEN}</token>
+        <disableCertificateValidation>true</disableCertificateValidation>
+        <batch_size_count>1</batch_size_count>
+        <retries_on_error>${LOG_SPLUNK_RETRY_COUNT}</retries_on_error>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>LOGBACKSPLUNK %logger: %msg%n</pattern>
+        </layout>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="SPLUNK"/>
+    </root>
+</configuration>

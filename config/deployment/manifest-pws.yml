@@ -1,0 +1,16 @@
+---
+# Endpoint: api.run.pivotal.io
+applications:
+  - name: loadtest-dv-1
+    path: ../../target/loadtest-paas.jar
+    instances: 1
+    memory: 1G
+    disk_quota: 1G
+    buildpacks:
+      - java_buildpack
+    env:
+      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 12.+ } }'
+      APP_LOG_LEVEL: INFO # INFO is the default
+      SPRING_PROFILES_ACTIVE: cloud # cloud is the default, multiple profiles are possible using comma
+      SWAGGER_ENABLE: true
+      APP_CONFIG_PROPAGATED_HEADER: 'Authorization'

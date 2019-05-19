@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Infrastructure Test Service</title>
+</head>
+<body>
+
+<h2>Infrastructure Test Service</h2>
+
+<div><i>Try it, but in Chrome/Firefox!</i></div>
+<ul>
+    <li><a href="api/test/sleep?ms=1000">/api/test/sleep?ms=1000</a></li>
+    <li><a href="api/test/fib?input=10">/api/test/fib?input=10</a></li>
+    <li><a href="api/test/remote-fib?input=6">/api/test/remote-fib?input=6</a></li>
+    <li><a href="api/test/remote?url=$PROTOCOL$://$HOST$:$PORT$/api/test/fib?input=1">/api/test/remote?url=$PROTOCOL$://$HOST$:$PORT$/api/test/fib?input=1</a></li>
+    <li><a href="api/test/return-blocks?numberOfKiloByteBlocks=10">/api/test/return-blocks?numberOfKiloByteBlocks=10</a></li>
+    <li><a href="api/test/return?size=1024">/api/test/return?size=1024</a></li>
+    <li><a href="api/test/memory?factor=10">/api/test/memory?factor=10</a></li>
+    <li><a href="api/test/sse-time-by-second?nrOfEvents=10">/api/test/sse-time-by-second?nrOfEvents=10</a></li>
+    <li>- - - </li>
+    <li><a href="api/test/echo-url">/api/test/echo-url</a></li>
+    <li><a href="api/test/echo-header">/api/test/echo-header</a></li>
+    <li><a href="api/test/system-info">/api/test/system-info</a></li>
+    <li>- - - </li>
+    <li><a href="actuator/health">/actuator/health</a></li>
+    <li><a href="actuator/metrics">/actuator/metrics</a></li>
+    <li><a href="actuator/metrics/http.server.requests">/actuator/metrics/http.server.requests</a></li>
+    <li><a href="actuator/metrics/jvm.threads.peak">/actuator/metrics/jvm.threads.peak</a></li>
+    <li><a href="actuator/metrics/jvm.threads.live">/actuator/metrics/jvm.threads.live</a></li>
+    <li><a href="actuator/metrics/system.load.average.1m">/actuator/metrics/system.load.average.1m</a></li>
+    <li><a href="actuator/metrics/tomcat.threads.busy">/actuator/metrics/tomcat.threads.busy (TOMCAT only)</a></li>
+</ul>
+
+<div>Or use <a href="swagger-ui.html">SWAGGER-UI</a></div>
+
+</body>
+</html>
